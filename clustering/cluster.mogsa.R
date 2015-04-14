@@ -58,11 +58,6 @@ plotClusterSilhouette <- function(x, d="pearson", link.method="ward.D", return=N
 
 latentVar <- moana_mfa@fac.scr[, 1:5]
 
-# explore
-plotClusterSilhouette(latentVar, d = "euclidean", link.method = "ward.D")
-plotClusterSilhouette(latentVar, d = "pearson", link.method = "ward.D")
-plotClusterSilhouette(latentVar, d = "spearman", link.method = "ward.D")
-
 # select pearson and ward.D method, different number of cluster
 cls2 <- plotClusterSilhouette(latentVar, d = "pearson", link.method = "ward.D", return = 2)
 cls3 <- plotClusterSilhouette(latentVar, d = "pearson", link.method = "ward.D", return = 3)
@@ -110,7 +105,7 @@ ccl_cls <- ccl[[3]]$consensusClass
 
 # =================================================================================
 # =                                                                               =
-# =                            consnesys clustering                               =
+# =                            densityPK clustering                               =
 # =                                                                               =
 # =================================================================================
 dc <- densityClust(distance, gaussian = TRUE)
